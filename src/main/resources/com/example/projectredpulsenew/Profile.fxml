@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="768" prefWidth="1366" style="-fx-background-color: #F3F4F6;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectredpulsenew.Profile_Controller">
+
+    <!-- ================= SIDEBAR (UNCHANGED) ================= -->
+    <left>
+        <VBox fx:id="sidebar" prefHeight="724.0" prefWidth="260.0" spacing="12" styleClass="sidebar" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="sidebarHeader" alignment="CENTER" styleClass="sidebar-header">
+                    <children>
+                        <Label fx:id="appNameLabel" prefHeight="35.0" prefWidth="164.0" styleClass="welcome-text" stylesheets="@styles.css" text="RedPulse" textFill="RED">
+                            <font>
+                                <Font name="Berlin Sans FB Demi Bold" size="39.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Separator />
+                <VBox fx:id="sidebarButtons" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="235.0" spacing="15.0">
+                    <children>
+<!--                        Dashboard-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="212.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/house.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnHome" mnemonicParsing="false" onAction="#ProftoHome" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Home">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Newsfeed-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="212.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/newspaper-folded.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnNewsFeed" mnemonicParsing="false" onAction="#ProftoNews" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Newsfeed">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Create Post-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="255.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-create-post-48.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnCreatePost" mnemonicParsing="false" onAction="#ProftoCreate" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Creat Post">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Notifications-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="298.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/bell.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnNotifications" mnemonicParsing="false" onAction="#ProftoNoti" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Notification">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Chat-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-chat-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnChat" mnemonicParsing="false" onAction="#ProftoChat" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Chat">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Profile-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-profile-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnProfile" mnemonicParsing="false" prefHeight="33.0" prefWidth="134.0" stylesheets="@styles.css" text="Profile">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                            <styleClass>
+                                                <String fx:value="sidebar-button" />
+                                                <String fx:value="clicked-button" />
+                                            </styleClass>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="clicked-button" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Settings-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-setting-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnSettings" mnemonicParsing="false" onAction="#ProftoStng" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Setting">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/LogOut.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#logout_p" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Log Out">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <Pane prefHeight="203.0" prefWidth="235.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+        </VBox>
+    </left>
+
+    <!-- ================= TOP BAR (UNCHANGED) ================= -->
+    <top>
+        <HBox fx:id="topBar" prefHeight="51.0" prefWidth="1366.0" spacing="12" styleClass="topbar" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+            <children>
+                <Pane prefHeight="27.0" prefWidth="1194.0" HBox.hgrow="ALWAYS" />
+<!--                <HBox fx:id="topBarRight" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="64.0" spacing="5.0">-->
+<!--                    <children>-->
+<!--                        <Button fx:id="btnLogOut" onAction="#logout_p" stylesheets="@styles.css" text="Log Out" textFill="WHITE">-->
+<!--                            <styleClass>-->
+<!--                                <String fx:value="login-button" />-->
+<!--                                <String fx:value="login-button" />-->
+<!--                            </styleClass>-->
+<!--                        </Button>-->
+<!--                    </children>-->
+<!--                </HBox>-->
+            </children>
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+        </HBox>
+    </top>
+
+    <!-- ================= CENTER: PROFILE CONTENT ================= -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="prof-scroll-pane" stylesheets="@styles.css">
+            <content>
+                <VBox alignment="TOP_CENTER" spacing="20">
+                    <padding>
+                        <Insets bottom="30" left="30" right="30" top="30" />
+                    </padding>
+
+                    <!-- Profile Header Card -->
+                    <HBox alignment="CENTER_LEFT" maxWidth="1000" spacing="20" stylesheets="@styles.css">
+                        <padding>
+                            <Insets bottom="20" left="20" right="20" top="20" />
+                        </padding>
+                        <children>
+                            <StackPane>
+                                <Circle fx:id="profileCircle" radius="80" stroke="WHITE" strokeWidth="2" />
+                            </StackPane>
+                            <VBox spacing="10" HBox.hgrow="ALWAYS">
+                                <VBox>
+                                <VBox.margin>
+                                    <Insets bottom="0" left="20" right="0" top="30" />
+                                </VBox.margin>
+                                </VBox>
+                                <Label fx:id="lblUserName" styleClass="prof-header-name" />
+                                <Label fx:id="lblHeaderDistrict" styleClass="prof-header-sub" />
+                                <Label fx:id="lblEligibilityStatus" styleClass="prof-badge-green" text="Eligible for Donation" />
+                            </VBox>
+
+                            <!-- ফাঁকা জায়গা যাতে ডেট সেকশন ডান দিকে চাপে -->
+                            <Pane HBox.hgrow="ALWAYS" />
+
+                            <!-- ডান পাশ: ডোনেশন ডেট সেকশন -->
+                            <VBox alignment="CENTER_RIGHT" spacing="8">
+                                <!-- Last Donation Row -->
+                                <HBox alignment="CENTER_RIGHT" spacing="10">
+                                    <Label style="-fx-text-fill: #6B7280; -fx-font-weight: bold;" text="Last Donation:" />
+                                    <Label fx:id="lblLastDonateDate" style="-fx-font-weight: bold; -fx-text-fill: #374151;" text="Not Set" />
+
+                                    <!-- ছোট বাটন ডেটপিকার ওপেন করার জন্য -->
+                                    <Button fx:id="btnPickDate" onAction="#openDatePicker" style="-fx-background-color: #E5E7EB; -fx-cursor: hand;" text="📅" textFill="#4b5563">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                        <tooltip>
+                                            <Tooltip text="Update Last Donation Date" />
+                                        </tooltip>
+                                    </Button>
+
+                                    <!-- লুকানো ডেটপিকার (দৃশ্যমান হবে না, কিন্তু কাজ করবে) -->
+                                    <DatePicker fx:id="dpHidden" maxWidth="0" opacity="0" />
+                                </HBox>
+
+                                <!-- Next Eligible Row -->
+                                <HBox alignment="CENTER_LEFT" prefHeight="22.0" prefWidth="229.0" spacing="10">
+                                    <Label style="-fx-text-fill: #6B7280; -fx-font-weight: bold;" text="Next Eligible:" />
+                                    <Label fx:id="lblNextEligibleDate" style="-fx-text-fill: #DC2626; -fx-font-size: 15px; -fx-font-weight: bold;" text="--/--/----" />
+                                </HBox>
+                            </VBox>
+
+                        </children>
+                  <styleClass>
+                      <String fx:value="prof-card" />
+                  </styleClass>
+                    </HBox>
+
+                    <!-- Personal Info & Documents Grid -->
+                    <HBox alignment="CENTER" maxWidth="1000" spacing="20">
+
+                        <!-- Personal Info -->
+                        <VBox maxWidth="1000" prefWidth="500" spacing="12" styleClass="prof-card" stylesheets="styles.css">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <children>
+                                <Label styleClass="prof-section-title" text="Personal Information" />
+                                <VBox spacing="10">
+                                    <Label fx:id="lblFullName" styleClass="prof-info-text" />
+                                    <Label fx:id="lblAge" styleClass="prof-info-text" />
+                                    <Label fx:id="lblGender" styleClass="prof-info-text" />
+                                    <Label fx:id="lblBloodGroup" styleClass="prof-info-text" />
+                                    <Label fx:id="lblPhone" styleClass="prof-info-text" />
+                                    <Label fx:id="lblEmail" styleClass="prof-info-text" />
+                                    <Label fx:id="lblDistrict" styleClass="prof-info-text" />
+                                </VBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Document Verification -->
+                        <VBox maxWidth="1000" prefWidth="500" spacing="15" styleClass="prof-card" GridPane.columnIndex="1">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <children>
+                                <Label styleClass="prof-section-title-large" text="Medical Certificate" />
+                                <Button fx:id="btnMedicalPdf" styleClass="prof-btn-primary" text="Open PDF" />
+                            </children>
+                        </VBox>
+                    </HBox>
+
+                    <!-- NID Images -->
+                    <HBox alignment="CENTER" maxWidth="1000" spacing="20">
+                        <VBox alignment="CENTER" maxWidth="1000" prefWidth="500" spacing="10" styleClass="prof-card">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <children>
+                                <ImageView fx:id="imgNidFront" fitHeight="180" preserveRatio="true" />
+                                <Label styleClass="prof-info-text-dark" text="NID Front" />
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefWidth="500" spacing="10" styleClass="prof-card">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                            <children>
+                                <ImageView fx:id="imgNidBack" fitHeight="180" preserveRatio="true" />
+                                <Label styleClass="prof-info-text-dark" text="NID Back" />
+                            </children>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Bottom Action Buttons -->
+                    <HBox alignment="CENTER" spacing="25">
+                        <padding>
+                            <Insets bottom="20" left="0" right="0" top="20" />
+                        </padding>
+                        <Button fx:id="btnEditProfile" onAction="#editprof" styleClass="prof-btn-primary" text="Edit Profile" />
+                        <Button fx:id="btnUpdatePhoto" onAction="#editPP" styleClass="prof-btn-text" text="Update Photo" />
+                        <Button fx:id="btnUpdateDocuments" onAction="#editdoc" styleClass="prof-btn-text" text="Update Documents" />
+                    </HBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectredpulsenew.Chat_Controller">
+    <left>
+        <VBox fx:id="sidebar" prefHeight="724.0" prefWidth="260.0" spacing="12" styleClass="sidebar" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="sidebarHeader" alignment="CENTER" styleClass="sidebar-header">
+                    <children>
+                        <Label fx:id="appNameLabel" prefHeight="35.0" prefWidth="164.0" styleClass="welcome-text" stylesheets="@styles.css" text="RedPulse" textFill="RED">
+                            <font>
+                                <Font name="Berlin Sans FB Demi Bold" size="39.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Separator />
+                <VBox fx:id="sidebarButtons" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="235.0" spacing="15.0">
+                    <children>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" styleClass="sidebar-button-hbox" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/house.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnHome" mnemonicParsing="false" onAction="#ChattoHome" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Home">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="212.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" styleClass="sidebar-button-hbox" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/newspaper-folded.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnNewsFeed" mnemonicParsing="false" onAction="#ChattoNews" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Newsfeed">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="255.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" styleClass="sidebar-button-hbox" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-create-post-48.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnCreatePost" mnemonicParsing="false" onAction="#ChattoCreate" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Creat Post">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="298.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" styleClass="sidebar-button-hbox" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/bell.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnNotifications" mnemonicParsing="false" onAction="#ChattoNoti" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Notification">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-chat-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnChat" mnemonicParsing="false" prefHeight="33.0" prefWidth="134.0" stylesheets="@styles.css" text="Chat">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                 <styleClass>
+                                    <String fx:value="sidebar-button" />
+                                    <String fx:value="clicked-button" />
+                                 </styleClass>
+                                        </Button>
+                                    </children>
+                           <styleClass>
+                              <String fx:value="sidebar-button-hbox" />
+                              <String fx:value="clicked-button" />
+                           </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" styleClass="sidebar-button-hbox" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-profile-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnProfile" onAction="#ChattoProf" mnemonicParsing="false" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Profile">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" styleClass="sidebar-button-hbox" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-setting-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnSettings" onAction="#ChattoStng" mnemonicParsing="false" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Setting">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/LogOut.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#logout_cht" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Log Out">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <Pane prefHeight="203.0" prefWidth="235.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+        </VBox>
+    </left>
+    <top>
+        <HBox fx:id="topBar" prefHeight="51.0" prefWidth="1366.0" spacing="12" styleClass="topbar" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+            <children>
+                <Pane prefHeight="27.0" prefWidth="1194.0" HBox.hgrow="ALWAYS" />
+<!--                <HBox fx:id="topBarRight" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="64.0" spacing="5.0">-->
+<!--                    <children>-->
+<!--                        <Button fx:id="btnLogOut" onAction="#logout_cht" stylesheets="@styles.css" text="Log Out" textFill="WHITE">-->
+<!--                            <styleClass>-->
+<!--                                <String fx:value="login-button" />-->
+<!--                                <String fx:value="login-button" />-->
+<!--                            </styleClass>-->
+<!--                        </Button>-->
+<!--                    </children>-->
+<!--                </HBox>-->
+            </children>
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="70.0" prefWidth="331.0">
+                    <children>
+                        <Label layoutX="48.0" layoutY="18.0" prefHeight="51.0" prefWidth="205.0" text="Chat">
+                            <font>
+                                <Font size="35.0" />
+                            </font>
+                        </Label>
+                    </children></AnchorPane>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

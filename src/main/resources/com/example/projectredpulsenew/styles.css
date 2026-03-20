@@ -1,0 +1,782 @@
+/* layout colors */
+.root { -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #FFFFFF, #FFFFFF); }
+
+
+
+.sidebar-button.active { -fx-background-color: #B71C1C; -fx-text-fill: white; }
+
+
+
+/* Graph */
+.bar-graph { -fx-padding: 12; }
+
+/*....................................................................*/
+
+.login-button{
+     -fx-background-color: #EF4444;
+     -fx-background-radius: 10;
+     -fx-font-color: #F1F3F9;
+     -fx-font-weight: bold;
+}
+.sidebar-button-hbox{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+    -fx-border-color: black;
+    -fx-border-width: 0.5;
+    -fx-border-radius: 10;
+}
+
+/*.sidebar-button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0, 0, 2);
+}*/
+
+.sidebar-button-hbox-h:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0, 0, 2);
+    -fx-background-color: #FFB29F;
+}
+.sidebar-button-hbox-a.active {
+    -fx-background-color: #EF4444;
+    -fx-text-fill: black;
+}
+
+
+.sidebar-button{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+}
+
+
+
+
+.sidebar {
+  -fx-background-color: #FEF8EC; /* soft red background */
+  -fx-padding: 20;
+  -fx-pref-width: 280px;
+}
+.topbar {
+  -fx-background-color: #FEF8EC;
+  -fx-padding: 12 24;
+
+}
+
+
+
+
+.root-login{
+    -fx-background-color: #CEE9EA;
+}
+.login-anch{
+    -fx-background-color: #FFFFFF;
+    /*-fx-border-color: #26282E;
+    -fx-border-width: 1;
+    -fx-border-radius: 40;*/
+    -fx-background-radius: 40;
+}
+
+.login-page-button{
+    -fx-background-color: #F64D4A;
+    -fx-background-radius: 40;
+    -fx-effect: dropshadow( gaussian , rgba(0, 0, 0, 0.7) , 5, 0.0 , 2 , 2 );
+}
+
+.login-signup{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: blue;
+}
+
+.clicked-button{
+    -fx-background-color: #EF4444;
+}
+
+
+/* Create Post-------------------------------------------------------------------------------------------*/
+
+/* --- Add these to your existing styles.css --- */
+
+/* ScrollPane Background Cleanup */
+.scroll-pane > .viewport {
+    -fx-background-color: #F3F4F6;
+}
+
+/* The Form Card (White Box) */
+.form-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    /* Soft shadow effect */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 4);
+}
+
+/* Typography for the Form */
+.form-title {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #CE2029; /* Matches RedPulse red */
+}
+
+.form-subtitle {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-text-fill: #6B7280;
+}
+
+.field-label {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+}
+
+/* Input Fields */
+.input-field, .combo-box-field, .date-picker-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+}
+
+/* Focus State (Red Glow) */
+.input-field:focused, .combo-box-field:focused, .date-picker-field:focused {
+    -fx-border-color: #CE2029;
+    -fx-background-color: #FFF5F5;
+}
+
+/* Text Area fix */
+.text-area .content {
+    -fx-background-color: white;
+}
+
+/* Form Buttons */
+.btn-primary {
+    -fx-background-color: #CE2029;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #A31820;
+}
+
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 6;
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 15px;
+    -fx-padding: 9 20; /* 9px to account for border */
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #E5E7EB;
+    -fx-text-fill: #374151;
+}
+
+
+
+/* --- Newsfeed Styles --- */
+
+/* Background for the Scroll area */
+.scroll-pane > .viewport {
+    -fx-background-color: #F3F4F6;
+    -fx-border-color: black;
+    -fx-border-width: 0.5;
+}
+
+/* The Card Container */
+.feed-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 8, 0, 0, 2);
+}
+
+.feed-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 12, 0, 0, 4);
+}
+
+/* Urgent Badge */
+.urgent-badge {
+    -fx-background-color: #ffebee;
+    -fx-text-fill: #d32f2f;
+    -fx-background-radius: 4;
+    -fx-padding: 4 8 4 8;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* Label Titles in the Grid (e.g. Hospital:, Date:) */
+.detail-label-title {
+    -fx-text-fill: #888888;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+/* Search Fields */
+.search-field {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 20;
+    -fx-padding: 8 15;
+    -fx-pref-width: 200px; /* Width for dual search bars */
+}
+.search-field:focused {
+    -fx-border-color: #d32f2f;
+}
+
+/* Action Buttons */
+.btn-filled {
+    -fx-background-color: #d32f2f;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+.btn-filled:hover {
+    -fx-background-color: #b71c1c;
+}
+
+.btn-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: #d32f2f;
+    -fx-border-radius: 6;
+    -fx-text-fill: #d32f2f;
+    -fx-font-weight: bold;
+    -fx-padding: 7 20;
+    -fx-cursor: hand;
+}
+.btn-outline:hover {
+    -fx-background-color: #ffebee;
+}
+
+.notice-label {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #1565c0;
+    -fx-padding: 10 15 10 15;
+    -fx-font-size: 13px;
+}
+
+
+
+/* --- Dashboard Dark Theme Styles --- */
+
+/* 1. Main Background */
+.main-background {
+    -fx-background-color: #111827; /* Very Dark Blue/Black */
+}
+
+/* 2. Scroll Pane Transparent */
+.dashboard-scroll {
+        -fx-background-color: transparent;
+        -fx-background: transparent;
+        -fx-border-color: black;
+        -fx-border-width: 0.5;
+}
+.dashboard-scroll > .viewport {
+    -fx-background-color: #F3F4F6; /* Matches main bg */
+}
+
+/* 3. Typography */
+.dashboard-title {
+    -fx-text-fill: #26282E;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.dashboard-subtitle {
+    -fx-text-fill: #9CA3AF; /* Light Gray */
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* 4. Request Blood Button */
+.btn-request-blood {
+    -fx-background-color: #EF4444; /* RedPulse Red */
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+.btn-request-blood:hover {
+    -fx-background-color: #DC2626;
+}
+
+/* 5. Cards (Stats & Chart) */
+.dashboard-card {
+    -fx-background-color: #B6D7DE;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 4);
+}
+
+/* 6. Stats Text */
+.stat-label {
+    /*-fx-background-color: #FD7F5D;*/
+    -fx-background-radius: 5;
+    -fx-text-fill: #010102; /* Gray Title */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.stat-value {
+    -fx-text-fill: black;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.stat-trend-green {
+    -fx-text-fill: #10B981; /* Green */
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* 7. Chart Styling for Dark Mode */
+.chart-title-label {
+    -fx-text-fill: black;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 0;
+}
+
+.custom-bar-chart {
+    -fx-background-color: transparent;
+}
+
+.custom-bar-chart .chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+/* Axis Labels (Months, Numbers) */
+.custom-bar-chart .axis {
+    -fx-tick-label-fill: #9CA3AF;
+}
+.custom-bar-chart .axis-label {
+    -fx-text-fill: #9CA3AF;
+}
+
+/* Bar Color (Override the controller's blue if needed, or let controller set it) */
+.default-color0.chart-bar { -fx-bar-fill: #7F1D1D; } /* Dark Red fallback */
+.default-color1.chart-bar { -fx-bar-fill: #EF4444; }
+
+/* Controller sets style manually to #0000FF (Blue) in your code.
+   To make it RED like the image, change your Controller line:
+   data.getNode().setStyle("-fx-bar-fill: #0000FF;");
+   TO:
+   data.getNode().setStyle("-fx-bar-fill: #EF4444;");
+*/
+
+
+
+/* --- Notification Page Styles --- */
+
+/* Clean up scrollpane background */
+.scroll-pane-clean {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+.scroll-pane-clean > .viewport {
+    -fx-background-color: #F3F4F6;
+}
+
+/* Filter Buttons (Pill Shape) */
+.filter-btn-active {
+    -fx-background-color: #D32F2F; /* Red */
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 6 15;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.filter-btn-inactive {
+    -fx-background-color: #E0E0E0; /* Light Gray */
+    -fx-text-fill: #333333;
+    -fx-background-radius: 20;
+    -fx-padding: 6 15;
+    -fx-font-weight: normal;
+    -fx-cursor: hand;
+}
+.filter-btn-inactive:hover {
+    -fx-background-color: #D6D6D6;
+}
+
+/* Notification Card */
+.notification-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 2);
+    -fx-alignment: TOP_LEFT;
+}
+
+/* Icon Background Circles */
+.notif-icon-bg-red {
+    -fx-background-color: #FFEBEE; /* Light Red */
+    -fx-background-radius: 50%; /* Circle */
+    -fx-min-width: 45px;
+    -fx-min-height: 45px;
+    -fx-max-width: 45px;
+    -fx-max-height: 45px;
+}
+
+.notif-icon-bg-gray {
+    -fx-background-color: #E0E0E0; /* Light Gray */
+    -fx-background-radius: 50%;
+    -fx-min-width: 45px;
+    -fx-min-height: 45px;
+    -fx-max-width: 45px;
+    -fx-max-height: 45px;
+}
+
+/* Text Styles */
+.notif-title {
+    -fx-text-fill: #1F2937;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.notif-subtitle {
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 13px;
+}
+
+.notif-time {
+    -fx-text-fill: #9CA3AF;
+    -fx-font-size: 12px;
+}
+
+
+/* --- Notification Page Styles (Unique 'noti' prefix) --- */
+
+/* ScrollPane Background */
+.noti-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+.noti-scroll-pane > .viewport {
+    -fx-background-color: #F3F4F6;
+}
+
+/* Filter Buttons */
+.noti-filter-btn-active {
+    -fx-background-color: #D32F2F; /* Red */
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 6 15;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.noti-filter-btn-inactive {
+    -fx-background-color: #E0E0E0; /* Light Gray */
+    -fx-text-fill: #333333;
+    -fx-background-radius: 20;
+    -fx-padding: 6 15;
+    -fx-font-weight: normal;
+    -fx-cursor: hand;
+}
+.noti-filter-btn-inactive:hover {
+    -fx-background-color: #D6D6D6;
+}
+
+/* Notification Card */
+.noti-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 2);
+    -fx-alignment: TOP_LEFT;
+}
+
+/* Icon Background Circles */
+.noti-icon-bg-red {
+    -fx-background-color: #FFEBEE; /* Light Red */
+    -fx-background-radius: 50%; /* Circle */
+    -fx-min-width: 45px;
+    -fx-min-height: 45px;
+    -fx-max-width: 45px;
+    -fx-max-height: 45px;
+}
+
+.noti-icon-bg-gray {
+    -fx-background-color: #E0E0E0; /* Light Gray */
+    -fx-background-radius: 50%;
+    -fx-min-width: 45px;
+    -fx-min-height: 45px;
+    -fx-max-width: 45px;
+    -fx-max-height: 45px;
+}
+
+/* Text Styles */
+.noti-title {
+    -fx-text-fill: #1F2937;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.noti-subtitle {
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 13px;
+}
+
+.noti-time {
+    -fx-text-fill: #9CA3AF;
+    -fx-font-size: 12px;
+}
+
+/* --- Profile Page Styles --- */
+
+/* Background for ScrollPane */
+.prof-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+.prof-scroll-pane > .viewport {
+    -fx-background-color: #F3F4F6;
+}
+
+/* White Card Style */
+.prof-card {
+    -fx-background-color: #FDFDFD;
+     -fx-border-color: #000000;
+     -fx-border-width: 1px;
+     -fx-border-radius: 10;
+     -fx-background-radius: 10;
+     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.20), 20, 0, 5, 5);
+}
+
+/* Header Text */
+.prof-header-name {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.prof-header-sub {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6B7280;
+}
+
+/* Green Badge */
+.prof-badge-green {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-background-radius: 15;
+    -fx-padding: 3 10;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* Section Titles */
+.prof-section-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1F2937;
+}
+.prof-section-title-large {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1F2937;
+    -fx-padding: 0 0 5 0;
+}
+
+/* Info Text */
+.prof-info-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4B5563;
+}
+.prof-info-text-dark {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+}
+.prof-label-small {
+    -fx-font-size: 11px;
+    -fx-text-fill: #9CA3AF;
+}
+
+/* Document Verification */
+.prof-doc-placeholder {
+    -fx-background-color: #F3F4F6;
+    -fx-background-radius: 6;
+}
+.prof-verified-text {
+    -fx-text-fill: #4CAF50;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* Buttons */
+.prof-btn-link {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3B82F6; /* Blue */
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+
+.prof-btn-primary {
+    -fx-background-color: #111827; /* Dark Blue/Black */
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-padding: 8 20;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+.prof-btn-primary:hover {
+    -fx-background-color: #000000;
+}
+
+.prof-btn-text {
+    -fx-background-color: transparent;
+    -fx-text-fill: #111827;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+.prof-btn-text:hover {
+    -fx-underline: true;
+}
+
+/* --- Settings Page Styles --- */
+
+/* ScrollPane Background */
+.settings-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+.settings-scroll-pane > .viewport {
+    -fx-background-color: #F3F4F6;
+}
+
+/* Header Text */
+.settings-header {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+/* The White Card */
+.settings-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 10 0 10 0; /* Padding inside card */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 2);
+}
+
+/* Rows (Buttons acting as list items) */
+.settings-row-btn {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 15 25;
+}
+.settings-row-btn:hover {
+    -fx-background-color: #F9FAFB;
+}
+
+/* Row Texts */
+.settings-item-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1F2937;
+}
+.settings-item-sub {
+    -fx-font-size: 13px;
+    -fx-text-fill: #9CA3AF;
+}
+
+/* Circular Icon Background */
+.settings-icon-bg {
+    -fx-background-color: #F3F4F6;
+    -fx-background-radius: 50%;
+    -fx-min-width: 45px;
+    -fx-min-height: 45px;
+    -fx-max-width: 45px;
+    -fx-max-height: 45px;
+}
+
+/* Logout Button */
+.settings-logout-btn {
+    -fx-background-color: #FEE2E2; /* Light Red */
+    -fx-text-fill: #EF4444;       /* Dark Red Text */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 12;
+    -fx-padding: 12 0;
+    -fx-cursor: hand;
+}
+.settings-logout-btn:hover {
+    -fx-background-color: #FECACA;
+}
+
+/* =======================================================
+                        EDIT PAGE
+======================================================= */
+
+/* Edit Card */
+.edit-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 40;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 12, 0, 0, 5);
+}
+
+/* Input Fields
+.text-field,
+.password-field,
+.combo-box {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #DDDDDD;
+    -fx-padding: 8 10 8 10;
+}
+
+.text-field:focused,
+.password-field:focused,
+.combo-box:focused {
+    -fx-border-color: #E53935;
+    -fx-border-width: 1.5;
+}*/
+
+/* ComboBox arrow color
+.combo-box .arrow {
+    -fx-background-color: #E53935;
+}
+*/
+
+/* Save Button */
+.edit-save-btn {
+    -fx-background-color: #E53935;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+}
+
+.edit-save-btn:hover {
+    -fx-background-color: #C62828;
+}
+
+/* Cancel Button */
+.edit-cancel-btn {
+    -fx-background-color: #EEEEEE;
+    -fx-background-radius: 8;
+}
+
+.edit-cancel-btn:hover {
+    -fx-background-color: #DDDDDD;
+}
+
+

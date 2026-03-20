@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="600.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectredpulsenew.SignUp_Controller">
+    <children>
+
+        <!-- ================= HEADER SECTION ================= -->
+        <VBox alignment="CENTER" prefHeight="100.0" style="-fx-background-color: linear-gradient(to right, #D31027, #EA384D); -fx-background-radius: 15 15 0 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label text="Join RedPulse" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                    <effect>
+                        <DropShadow radius="2.0" spread="0.2" offsetY="1.0">
+                            <color>
+                                <Color opacity="0.3" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Label>
+                <Label text="Create your account to start saving lives" textFill="#ffeff1">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- ================= SCROLLABLE FORM ================= -->
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutY="100.0" style="-fx-background-color: transparent; -fx-background: white;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+            <content>
+                <VBox spacing="12.0" style="-fx-background-color: white;">
+                    <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="20.0" />
+                    </padding>
+                    <children>
+
+                        <!-- SECTION 1: PERSONAL DETAILS -->
+                        <Label text="Personal Details" textFill="#D31027">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Separator />
+
+                        <!-- Name -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="Full Name" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <TextField fx:id="name" promptText="Enter full name" style="-fx-background-radius: 8; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS" prefHeight="40.0"/>
+                            </children>
+                        </HBox>
+
+                        <!-- Age -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="Age" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <TextField fx:id="age" promptText="Age" style="-fx-background-radius: 8; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS" prefHeight="40.0"/>
+                            </children>
+                        </HBox>
+
+                        <!-- Gender -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="Gender" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <ComboBox fx:id="genderItems" maxWidth="1.7976931348623157E308" promptText="Select Gender" style="-fx-background-color: #FAFAFA; -fx-border-color: #E0E0E0; -fx-border-radius: 8;" HBox.hgrow="ALWAYS" prefHeight="40.0"/>
+                            </children>
+                        </HBox>
+
+                        <!-- Blood Group -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="Blood Group" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <ComboBox fx:id="bloodGroupOption" maxWidth="1.7976931348623157E308" promptText="Select Blood Group" style="-fx-background-color: #FAFAFA; -fx-border-color: #E0E0E0; -fx-border-radius: 8;" HBox.hgrow="ALWAYS" prefHeight="40.0"/>
+                            </children>
+                        </HBox>
+
+                        <!-- District -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="District" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <ComboBox fx:id="district_items" maxWidth="1.7976931348623157E308" promptText="Select District" style="-fx-background-color: #FAFAFA; -fx-border-color: #E0E0E0; -fx-border-radius: 8;" HBox.hgrow="ALWAYS" prefHeight="40.0"/>
+                            </children>
+                        </HBox>
+
+                        <!-- SECTION 2: CONTACT & SECURITY -->
+                        <Label text="Contact &amp; Security" textFill="#D31027">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Separator />
+
+                        <!-- Email -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="Email" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <TextField fx:id="email" promptText="Email Address" style="-fx-background-radius: 8; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS" prefHeight="40.0"/>
+                            </children>
+                        </HBox>
+
+                        <!-- Phone -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="Phone Number" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <TextField fx:id="number" promptText="Phone Number" style="-fx-background-radius: 8; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS" prefHeight="40.0"/>
+                            </children>
+                        </HBox>
+
+                        <!-- Password -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="Password" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <PasswordField fx:id="password" promptText="Password" style="-fx-background-radius: 8; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS" prefHeight="40.0"/>
+                            </children>
+                        </HBox>
+
+                        <!-- Confirm Password -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="Confirm Password" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <PasswordField fx:id="confirm_pass" promptText="Retype Password" style="-fx-background-radius: 8; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS" prefHeight="40.0"/>
+                            </children>
+                        </HBox>
+
+                        <!-- SECTION 3: DOCUMENTS -->
+                        <Label text="Documents" textFill="#D31027">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Separator />
+
+                        <!-- Profile Picture -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="Profile Picture" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-padding: 5; -fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="chooseProfilePicBtn" text="Choose File" style="-fx-background-color: #EEE; -fx-cursor: hand;"/>
+                                        <Label fx:id="profilePicStatus" text="No file selected" textFill="#999999"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <!-- Medical Cert -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="Medical Cert." textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-padding: 5; -fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="chooseMedicalPdfBtn" text="Upload PDF" style="-fx-background-color: #EEE; -fx-cursor: hand;"/>
+                                        <Label fx:id="medicalPdfStatus" text="No file selected" textFill="#999999"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <!-- NID Front -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="NID Front" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-padding: 5; -fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="chooseNidFrontBtn" text="Choose Image" style="-fx-background-color: #EEE; -fx-cursor: hand;"/>
+                                        <Label fx:id="nidFrontStatus" text="No file selected" textFill="#999999"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <!-- NID Back -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label prefWidth="130.0" text="NID Back" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <Label text=":" textFill="#555555"><font><Font name="System Bold" size="13.0" /></font></Label>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-padding: 5; -fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="chooseNidBackBtn" text="Choose Image" style="-fx-background-color: #EEE; -fx-cursor: hand;"/>
+                                        <Label fx:id="nidBackStatus" text="No file selected" textFill="#999999"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <!-- Error Message -->
+<!--                        <Label fx:id="signupMassage" alignment="CENTER" maxWidth="1.7976931348623157E308" textFill="RED">-->
+<!--                            <font>-->
+<!--                                <Font name="System Bold" size="12.0" />-->
+<!--                            </font>-->
+<!--                        </Label>-->
+
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+
+        <!-- ================= FOOTER BUTTONS ================= -->
+        <VBox alignment="CENTER" layoutY="620.0" prefHeight="80.0" spacing="5.0" style="-fx-background-color: #FAFAFA; -fx-background-radius: 0 0 15 15; -fx-border-color: #EEEEEE; -fx-border-width: 1 0 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+        <HBox alignment="CENTER">
+            <Label fx:id="signupMassage" alignment="CENTER" maxWidth="1.7976931348623157E308" textFill="RED">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Label>
+        </HBox>
+        <HBox alignment="CENTER" layoutY="620.0" prefHeight="80.0" spacing="20.0" style="-fx-background-color: #FAFAFA; -fx-background-radius: 0 0 15 15; -fx-border-color: #EEEEEE; -fx-border-width: 1 0 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Button fx:id="btnCancel" onAction="#handleCancel" mnemonicParsing="false" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-color: #AAAAAA; -fx-border-radius: 25; -fx-background-radius: 25; -fx-text-fill: #555555; -fx-font-weight: bold; -fx-cursor: hand;" text="CANCEL" />
+                <Button fx:id="signupBtn" onAction="#signup" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #D31027, #EA384D); -fx-background-radius: 25; -fx-text-fill: white; -fx-font-weight: bold; -fx-effect: dropshadow(three-pass-box, rgba(211, 16, 39, 0.3), 10, 0, 0, 4); -fx-cursor: hand;" text="CREATE ACCOUNT" />
+            </children>
+        </HBox>
+
+        </VBox>
+
+    </children>
+</AnchorPane>

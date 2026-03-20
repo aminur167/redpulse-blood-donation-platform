@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<!--
+    Profile Picture Update Popup
+    Theme: RedPulse
+    This popup shows current image preview and allows updating profile picture
+-->
+
+<AnchorPane prefHeight="500.0" prefWidth="400.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.projectredpulsenew.UpdateProfilePic_Controller"
+            style="-fx-background-color: white; -fx-background-radius: 20;
+                   -fx-border-radius: 20;
+                   -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 0);">
+
+    <children>
+
+        <!-- ================= HEADER SECTION ================= -->
+        <VBox alignment="CENTER"
+              prefHeight="100.0"
+              style="-fx-background-color: linear-gradient(to right, #D31027, #EA384D);
+                   -fx-background-radius: 20 20 0 0;"
+              AnchorPane.topAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0">
+
+            <children>
+                <Label text="Update Photo" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="24.0"/>
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- ================= IMAGE PREVIEW AREA ================= -->
+        <VBox alignment="TOP_CENTER"
+              spacing="20.0"
+              AnchorPane.topAnchor="120.0"
+              AnchorPane.bottomAnchor="80.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0">
+
+            <children>
+
+                <!-- Circular Image Preview -->
+                <StackPane>
+                    <children>
+                        <!-- Outer Border Circle -->
+                        <Circle radius="75.0"
+                                fill="#f4f4f4"
+                                stroke="#ea384d"
+                                strokeWidth="3.0"/>
+
+                        <!-- Actual Profile Image Circle -->
+                        <Circle fx:id="profileCircle"
+                                radius="70.0"
+                                fill="#e0e0e0"/>
+                    </children>
+                </StackPane>
+
+                <Label text="Allowed formats: JPG, PNG, JPEG"
+                       textFill="#888888"/>
+
+                <!-- Choose Image Button -->
+                <Button fx:id="btnChoose"
+                        text="Upload New Photo"
+                        onAction="#chooseImage"
+                        prefWidth="180"
+                        style="-fx-background-color: white;
+                           -fx-border-color: #D31027;
+                           -fx-border-radius: 20;
+                           -fx-background-radius: 20;
+                           -fx-text-fill: #D31027;
+                           -fx-font-weight: bold;"/>
+
+                <!-- Status Label -->
+                <Label fx:id="lblStatus"
+                       text=""
+                       textFill="#2e7d32"/>
+
+            </children>
+        </VBox>
+
+        <!-- ================= FOOTER BUTTONS ================= -->
+        <HBox alignment="CENTER"
+              spacing="20.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0"
+              prefHeight="80.0"
+              style="-fx-background-color: #FAFAFA;
+                   -fx-background-radius: 0 0 20 20;">
+
+            <children>
+
+                <Button fx:id="btnCancelPP"
+                        text="CANCEL"
+                        onAction="#handleCancel"
+                        prefWidth="120"
+                        style="-fx-background-color: white;
+                           -fx-border-color: #AAAAAA;
+                           -fx-border-radius: 25;
+                           -fx-background-radius: 25;
+                           -fx-font-weight: bold;"/>
+
+                <Button fx:id="btnSavePP"
+                        text="SAVE CHANGES"
+                        onAction="#handleSave"
+                        prefWidth="160"
+                        style="-fx-background-color: linear-gradient(to right, #D31027, #EA384D);
+                           -fx-background-radius: 25;
+                           -fx-text-fill: white;
+                           -fx-font-weight: bold;"/>
+
+            </children>
+        </HBox>
+
+    </children>
+</AnchorPane>

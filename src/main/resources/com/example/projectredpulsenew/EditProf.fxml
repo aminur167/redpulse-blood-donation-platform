@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="480.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectredpulsenew.Edit_Controller">
+    <children>
+
+        <!-- ================= HEADER (Red Gradient) ================= -->
+        <VBox alignment="CENTER" prefHeight="110.0" style="-fx-background-color: linear-gradient(to bottom right, #D31027, #EA384D);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label text="Edit Profile" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                    <effect>
+                        <DropShadow radius="2.0" spread="0.2" offsetY="1.0">
+                            <color>
+                                <Color opacity="0.3" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Label>
+                <Label text="Update your personal information" textFill="#ffeff1">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+            <effect>
+                <DropShadow height="10.0" radius="4.5" width="10.0">
+                    <color>
+                        <Color opacity="0.2" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </VBox>
+
+        <!-- ================= SCROLLABLE FORM AREA ================= -->
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutY="110.0" style="-fx-background-color: transparent; -fx-background: white;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="110.0">
+            <content>
+                <VBox spacing="18.0" style="-fx-background-color: white;">
+                    <padding>
+                        <Insets bottom="20.0" left="35.0" right="35.0" top="25.0" />
+                    </padding>
+                    <children>
+
+                        <!-- Full Name -->
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="Full Name" textFill="#555555">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtName" prefHeight="40.0" promptText="Enter full name" style="-fx-background-radius: 8; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-color: #FAFAFA; -fx-padding: 10;">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </VBox>
+
+                        <!-- Age & Gender Row -->
+                        <HBox spacing="15.0">
+                            <children>
+                                <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="Age" textFill="#555555">
+                                            <font>
+                                                <Font name="System Bold" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txtAge" prefHeight="40.0" promptText="Age" style="-fx-background-radius: 8; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-color: #FAFAFA; -fx-padding: 10;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="Gender" textFill="#555555">
+                                            <font>
+                                                <Font name="System Bold" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="cmbGender" maxWidth="1.7976931348623157E308" prefHeight="40.0" promptText="Select" style="-fx-background-color: #FAFAFA; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-radius: 8;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <!-- Blood Group & District Row -->
+                        <HBox spacing="15.0">
+                            <children>
+                                <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="Blood Group" textFill="#555555">
+                                            <font>
+                                                <Font name="System Bold" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="cmbBlood" maxWidth="1.7976931348623157E308" prefHeight="40.0" promptText="Group" style="-fx-background-color: #FAFAFA; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-radius: 8;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="District" textFill="#555555">
+                                            <font>
+                                                <Font name="System Bold" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txtDistrict" prefHeight="40.0" promptText="District" style="-fx-background-radius: 8; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-color: #FAFAFA; -fx-padding: 10;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <!-- Phone Number -->
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="Phone Number" textFill="#555555">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtPhone" prefHeight="40.0" promptText="017..." style="-fx-background-radius: 8; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-color: #FAFAFA; -fx-padding: 10;">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </VBox>
+
+                        <!-- Email Address -->
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="Email Address" textFill="#555555">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtEmail" prefHeight="40.0" promptText="example@mail.com" style="-fx-background-radius: 8; -fx-border-color: #E0E0E0; -fx-border-radius: 8; -fx-background-color: #FAFAFA; -fx-padding: 10;">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </VBox>
+
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+
+        <!-- ================= FOOTER BUTTONS ================= -->
+        <HBox alignment="CENTER" layoutY="580.0" prefHeight="80.0" spacing="20.0" style="-fx-background-color: #F8F8F8; -fx-border-color: #EEEEEE; -fx-border-width: 1 0 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#handleCancel" prefHeight="45.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-color: #AAAAAA; -fx-border-radius: 25; -fx-background-radius: 25; -fx-text-fill: #555555; -fx-font-weight: bold; -fx-cursor: hand;" text="CANCEL">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnSave" mnemonicParsing="false" onAction="#handleSave" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: linear-gradient(to right, #D31027, #EA384D); -fx-background-radius: 25; -fx-text-fill: white; -fx-font-weight: bold; -fx-effect: dropshadow(three-pass-box, rgba(211, 16, 39, 0.3), 10, 0, 0, 4); -fx-cursor: hand;" text="SAVE CHANGES">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+
+    </children>
+</AnchorPane>

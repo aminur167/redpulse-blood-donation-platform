@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="500.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectredpulsenew.EditDocuments_Controller">
+    <children>
+
+        <!-- ================= HEADER SECTION ================= -->
+        <VBox alignment="CENTER" prefHeight="100.0" style="-fx-background-color: linear-gradient(to right, #D31027, #EA384D); -fx-background-radius: 15 15 0 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label text="Upload Documents" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                    <effect>
+                        <DropShadow radius="2.0" spread="0.2" offsetY="1.0">
+                            <color>
+                                <Color opacity="0.3" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Label>
+                <Label text="Ensure your documents are clear and valid" textFill="#ffecec">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+
+        <!-- ================= UPLOAD FORM SECTION ================= -->
+        <VBox spacing="20.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="110.0">
+            <padding>
+                <Insets left="40.0" right="40.0" top="20.0" />
+            </padding>
+            <children>
+
+                <!-- Medical PDF Section -->
+                <VBox spacing="8.0" style="-fx-background-color: #FAFAFA; -fx-background-radius: 10; -fx-border-color: #E0E0E0; -fx-border-radius: 10; -fx-padding: 15;">
+                    <children>
+                        <Label text="Medical Certificate (PDF)" textFill="#D31027">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <children>
+                                <Button fx:id="btnMedicalPdf" mnemonicParsing="false" onAction="#chooseMedicalPdf" style="-fx-background-color: white; -fx-border-color: #999; -fx-border-radius: 5; -fx-cursor: hand;" text="Choose File" textFill="#555555" />
+                                <Label fx:id="lblMedicalStatus" text="No file chosen" textFill="#888888">
+                                    <font>
+                                        <Font name="System Italic" size="12.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <!-- NID Front Section -->
+                <VBox spacing="8.0" style="-fx-background-color: #FAFAFA; -fx-background-radius: 10; -fx-border-color: #E0E0E0; -fx-border-radius: 10; -fx-padding: 15;">
+                    <children>
+                        <Label text="National ID (Front Side)" textFill="#D31027">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <children>
+                                <Button fx:id="btnNidFront" mnemonicParsing="false" onAction="#chooseNidFront" style="-fx-background-color: white; -fx-border-color: #999; -fx-border-radius: 5; -fx-cursor: hand;" text="Select Image" textFill="#555555" />
+                                <Label fx:id="lblNidFrontStatus" text="No image selected" textFill="#888888">
+                                    <font>
+                                        <Font name="System Italic" size="12.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <!-- NID Back Section -->
+                <VBox spacing="8.0" style="-fx-background-color: #FAFAFA; -fx-background-radius: 10; -fx-border-color: #E0E0E0; -fx-border-radius: 10; -fx-padding: 15;">
+                    <children>
+                        <Label text="National ID (Back Side)" textFill="#D31027">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <children>
+                                <Button fx:id="btnNidBack" mnemonicParsing="false" onAction="#chooseNidBack" style="-fx-background-color: white; -fx-border-color: #999; -fx-border-radius: 5; -fx-cursor: hand;" text="Select Image" textFill="#555555" />
+                                <Label fx:id="lblNidBackStatus" text="No image selected" textFill="#888888">
+                                    <font>
+                                        <Font name="System Italic" size="12.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+            </children>
+        </VBox>
+
+        <!-- ================= FOOTER BUTTONS ================= -->
+        <VBox alignment="CENTER" layoutY="480.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Separator prefWidth="200.0" />
+                <HBox alignment="CENTER" prefHeight="80.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 0 0 15 15;">
+                    <children>
+                        <Button fx:id="btnCancelDoc" mnemonicParsing="false" onAction="#handleCancelDoc" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-color: #D31027; -fx-border-radius: 25; -fx-background-radius: 25; -fx-text-fill: #D31027; -fx-font-weight: bold; -fx-cursor: hand;" text="CANCEL" />
+                        <Button fx:id="btnSaveDoc" mnemonicParsing="false" onAction="#handleSaveDoc" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(to right, #D31027, #EA384D); -fx-background-radius: 25; -fx-text-fill: white; -fx-font-weight: bold; -fx-effect: dropshadow(three-pass-box, rgba(211, 16, 39, 0.4), 10, 0, 0, 4); -fx-cursor: hand;" text="SAVE &amp; UPLOAD" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootBorderPane" prefHeight="768.0" prefWidth="1366.0" styleClass="main-background" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectredpulsenew.Dashboar_Controller">
+
+    <!-- ================= TOP BAR (UNCHANGED) ================= -->
+    <top>
+        <HBox fx:id="topBar" alignment="CENTER" prefHeight="51.0" prefWidth="1366.0" spacing="8.0" styleClass="topbar" BorderPane.alignment="CENTER">
+            <children>
+                <Pane prefHeight="27.0" prefWidth="1194.0" HBox.hgrow="ALWAYS" />
+                <!--                <HBox alignment="CENTER" prefHeight="27.0" prefWidth="68.0">-->
+                <!--                    <children>-->
+                <!--                        <Button fx:id="btnLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#login_d" prefHeight="27.0" prefWidth="61.0" styleClass="login-button" stylesheets="@styles.css" text="Login" textFill="WHITE">-->
+                <!--                            <font>-->
+                <!--                                <Font name="System Bold" size="13.0" />-->
+                <!--                            </font>-->
+                <!--                        </Button>-->
+                <!--                    </children>-->
+                <!--                </HBox>-->
+                <HBox alignment="CENTER" prefHeight="27.0" prefWidth="64.0">
+                    <children>
+                        <AnchorPane prefHeight="27.0" prefWidth="64.0">
+                            <children>
+                                <!--                                <Button fx:id="btnLogOut" layoutX="3.0" onAction="#logout_d" prefHeight="27.0" prefWidth="61.0" stylesheets="@styles.css" text="Log Out" textFill="WHITE">-->
+                                <!--                                    <styleClass>-->
+                                <!--                                        <String fx:value="login-button" />-->
+                                <!--                                        <String fx:value="login-button" />-->
+                                <!--                                    </styleClass>-->
+                                <!--                                </Button>-->
+                                <!--                                <Button fx:id="btnSignUp" layoutX="3.0" onAction="#signup_d" prefHeight="27.0" prefWidth="61.0" stylesheets="@styles.css" text="Sign Up" textFill="WHITE">-->
+                                <!--                                    <styleClass>-->
+                                <!--                                        <String fx:value="login-button" />-->
+                                <!--                                        <String fx:value="login-button" />-->
+                                <!--                                    </styleClass>-->
+                                <!--                                    <padding>-->
+                                <!--                                        <Insets top="1.0" />-->
+                                <!--                                    </padding>-->
+                                <!--                                </Button>-->
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+
+            </children>
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+        </HBox>
+    </top>
+
+    <!-- ================= CENTER CONTENT (REDESIGNED) ================= -->
+    <center>
+        <ScrollPane fx:id="mainScroll" fitToWidth="true" BorderPane.alignment="CENTER">
+            <content>
+                <VBox fx:id="mainContent" spacing="30.0" styleClass="dashboard-scroll" stylesheets="@styles.css">
+                    <padding>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                    </padding>
+
+                    <!-- HEADER ROW: Welcome Text + Request Button -->
+                    <HBox fx:id="welcomeRow" alignment="CENTER_LEFT" spacing="20.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: CAF1DE;">
+                        <children>
+                            <VBox spacing="5.0">
+                                <children>
+                                    <Label fx:id="welcomeTitle" styleClass="dashboard-title" text="Welcome back, Jane!" />
+                                    <Label fx:id="welcomeSubtitle" styleClass="dashboard-subtitle" text="Your contributions are making a vital difference. Let's continue saving lives together." />
+                                </children>
+                                <HBox.margin>
+                                    <Insets bottom="3.0" />
+                                </HBox.margin>
+                            </VBox>
+                            <Pane HBox.hgrow="ALWAYS" />
+                            <!-- Moved Request Button Here to match Image -->
+                            <Button fx:id="btnRequestBlood" onAction="#RequestBlood" graphicTextGap="10.0" prefHeight="45.0" prefWidth="180.0" styleClass="btn-request-blood" text="+ Request Blood" textFill="WHITE" />
+                        </children>
+                        <padding>
+                            <Insets left="5.0" right="5.0" />
+                        </padding>
+                    </HBox>
+
+                    <!-- STATS ROW -->
+                    <HBox fx:id="statsRow" spacing="20.0">
+                        <children>
+
+                            <!-- Card 1: Total Donors -->
+                            <StackPane fx:id="statTotalDonors" styleClass="dashboard-card" HBox.hgrow="ALWAYS">
+                                <children>
+                                    <VBox spacing="10.0">
+                                        <padding>
+                                            <Insets bottom="20.0" left="25.0" right="25.0" top="25.0" />
+                                        </padding>
+                                        <children>
+                                            <HBox alignment="CENTER_LEFT">
+                                                <children>
+                                                    <Label fx:id="stat1Title" styleClass="stat-label" text="Total Donors" />
+                                                    <Pane HBox.hgrow="ALWAYS" />
+                                                    <!-- Icon Placeholder (Optional) -->
+                                                    <Label style="-fx-text-fill: #010102; -fx-font-size: 24px;" text="👥" />
+                                                </children>
+                                            </HBox>
+                                            <Label fx:id="stat1Number" styleClass="stat-value" text="4,820" />
+                                            <Label styleClass="stat-trend-green" text="↑ +1.2% this month" />
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </StackPane>
+
+                            <!-- Card 2: Active Requests -->
+                            <StackPane fx:id="statActiveRequests" styleClass="dashboard-card" HBox.hgrow="ALWAYS">
+                                <children>
+                                    <VBox spacing="10.0">
+                                        <padding>
+                                            <Insets bottom="20.0" left="25.0" right="25.0" top="25.0" />
+                                        </padding>
+                                        <children>
+                                            <HBox alignment="CENTER_LEFT">
+                                                <children>
+                                                    <Label fx:id="stat1Title1" styleClass="stat-label" text="Active Requests" />
+                                                    <Pane HBox.hgrow="ALWAYS" />
+                                                    <Label style="-fx-text-fill: #010102; -fx-font-size: 24px;" text="📋" />
+                                                </children>
+                                            </HBox>
+                                            <Label fx:id="stat1Number1" styleClass="stat-value" text="15" />
+                                            <Label styleClass="stat-trend-green" text="↑ +5.0% this week" />
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </StackPane>
+
+                            <!-- Card 3: Successful Donations -->
+                            <StackPane fx:id="statSuccessful" styleClass="dashboard-card" HBox.hgrow="ALWAYS">
+                                <children>
+                                    <VBox spacing="10.0">
+                                        <padding>
+                                            <Insets bottom="20.0" left="25.0" right="25.0" top="25.0" />
+                                        </padding>
+                                        <children>
+                                            <HBox alignment="CENTER_LEFT">
+                                                <children>
+                                                    <Label fx:id="stat1Title11" styleClass="stat-label" text="Successful Donations" />
+                                                    <Pane HBox.hgrow="ALWAYS" />
+                                                    <Label style="-fx-text-fill: #010102; -fx-font-size: 24px;" text="✅" />
+                                                </children>
+                                            </HBox>
+                                            <Label fx:id="stat1Number11" styleClass="stat-value" text="212" />
+                                            <Label styleClass="stat-trend-green" text="↑ +8.5% this month" />
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </StackPane>
+
+                        </children>
+                    </HBox>
+
+                    <!-- CHART SECTION -->
+                    <VBox prefHeight="478.0" prefWidth="988.0" style="-fx-border-color: black; -fx-border-width: 1; -fx-border-radius: 10;" VBox.vgrow="ALWAYS">
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+                        <children>
+                            <Label styleClass="chart-title-label" text="Monthly Blood Requests" />
+                            <BarChart fx:id="requestChart" animated="false" legendVisible="false" prefHeight="400.0" styleClass="custom-bar-chart">
+                                <xAxis>
+                                    <CategoryAxis fx:id="y" label="Month" side="BOTTOM" tickLabelFill="WHITE" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis label="Number of Request" side="LEFT" tickLabelFill="#0d0d0d" fx:id="x">
+                                        <tickLabelFont>
+                                            <Font name="System Bold" size="11.0" />
+                                        </tickLabelFont></NumberAxis>
+                                </yAxis>
+                            </BarChart>
+                        </children>
+                    </VBox>
+
+                    <Region VBox.vgrow="ALWAYS" />
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <!-- ================= SIDEBAR (UNCHANGED) ================= -->
+    <left>
+        <VBox fx:id="sidebar" prefHeight="724.0" prefWidth="260.0" spacing="12" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="sidebarHeader" alignment="CENTER" styleClass="sidebar-header">
+                    <children>
+                        <Label fx:id="appNameLabel" prefHeight="35.0" prefWidth="164.0" styleClass="welcome-text" stylesheets="@styles.css" text="RedPulse" textFill="RED">
+                            <font>
+                                <Font name="Berlin Sans FB Demi Bold" size="39.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Separator />
+                <VBox fx:id="sidebarButtons" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="235.0" spacing="15.0">
+                    <children>
+                        <!--                        Home Button-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="212.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/house.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnHome" mnemonicParsing="false" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Home">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="clicked-button" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <!--                        Newsfeed Button-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="212.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/newspaper-folded.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnNewsFeed" mnemonicParsing="false" onAction="#DashtoNews" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Newsfeed">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                        <String fx:value="sidebar-button-hbox-a" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <!--                        Create Post-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="255.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-create-post-48.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnCreatePost" mnemonicParsing="false" onAction="#DashtoCreate" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Creat Post">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <!--                        Notification-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="298.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/bell.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnNotifications" mnemonicParsing="false" onAction="#DashtoNoti" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Notification">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <!--                        Chat-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-chat-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnChat" mnemonicParsing="false" onAction="#DashtoChat" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Chat">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <!--                        profile-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-profile-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnProfile" mnemonicParsing="false" onAction="#DashtoProf" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Profile">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <!--                        Setting-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-setting-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnSettings" mnemonicParsing="false" onAction="#Dashtostng" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Setting">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <!--&lt;!&ndash;                        logIn/logOut&ndash;&gt;-->
+                        <!--                        <HBox alignment="CENTER" layoutX="10.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">-->
+                        <!--                            <padding>-->
+                        <!--                                <Insets left="10.0" right="10.0" />-->
+                        <!--                            </padding>-->
+                        <!--                        <StackPane layoutX="10.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="186.0">-->
+
+                        <!--                            <children>-->
+                        <!--                                <HBox fx:id="loginBox" alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">-->
+                        <!--                                    <children>-->
+                        <!--                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">-->
+                        <!--                                            <image>-->
+                        <!--                                                <Image url="@img/LogIn.png" />-->
+                        <!--                                            </image>-->
+                        <!--                                        </ImageView>-->
+                        <!--                                        <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#login_d" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Log in">-->
+                        <!--                                            <font>-->
+                        <!--                                                <Font name="Bell MT Bold" size="16.0" />-->
+                        <!--                                            </font>-->
+                        <!--                                        </Button>-->
+                        <!--                                    </children>-->
+                        <!--                                    <styleClass>-->
+                        <!--                                        <String fx:value="sidebar-button-hbox" />-->
+                        <!--                                        <String fx:value="sidebar-button-hbox-h" />-->
+                        <!--                                    </styleClass>-->
+                        <!--                                </HBox>-->
+                        <!--                                <HBox fx:id="logoutBox" visible="false" managed="false" alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">-->
+                        <!--                                    <children>-->
+                        <!--                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">-->
+                        <!--                                            <image>-->
+                        <!--                                                <Image url="@img/LogOut.png" />-->
+                        <!--                                            </image>-->
+                        <!--                                        </ImageView>-->
+                        <!--                                        <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#logout_d" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Log out">-->
+                        <!--                                            <font>-->
+                        <!--                                                <Font name="Bell MT Bold" size="16.0" />-->
+                        <!--                                            </font>-->
+                        <!--                                        </Button>-->
+                        <!--                                    </children>-->
+                        <!--                                    <styleClass>-->
+                        <!--                                        <String fx:value="sidebar-button-hbox" />-->
+                        <!--                                        <String fx:value="sidebar-button-hbox-h" />-->
+                        <!--                                    </styleClass>-->
+                        <!--                                </HBox>-->
+                        <!--                            </children>-->
+                        <!--                        </StackPane>-->
+                        <!--                        </HBox>-->
+
+                        <!--&lt;!&ndash;                        sign up&ndash;&gt;-->
+                        <!--                        <HBox  alignment="CENTER" layoutX="10.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">-->
+                        <!--                            <padding>-->
+                        <!--                                <Insets left="10.0" right="10.0" />-->
+                        <!--                            </padding>-->
+                        <!--                            <children>-->
+                        <!--                                <HBox fx:id="signupBox" alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">-->
+                        <!--                                    <children>-->
+                        <!--                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">-->
+                        <!--                                            <image>-->
+                        <!--                                                <Image url="@img/SignUp.png" />-->
+                        <!--                                            </image>-->
+                        <!--                                        </ImageView>-->
+                        <!--                                        <Button fx:id="btnSignUp" mnemonicParsing="false" onAction="#signup_d" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Sign Up">-->
+                        <!--                                            <font>-->
+                        <!--                                                <Font name="Bell MT Bold" size="16.0" />-->
+                        <!--                                            </font>-->
+                        <!--                                        </Button>-->
+                        <!--                                    </children>-->
+                        <!--                                    <styleClass>-->
+                        <!--                                        <String fx:value="sidebar-button-hbox" />-->
+                        <!--                                        <String fx:value="sidebar-button-hbox-h" />-->
+                        <!--                                    </styleClass>-->
+                        <!--                                </HBox>-->
+                        <!--                            </children>-->
+                        <!--                        </HBox>-->
+
+
+
+                        <!--                        Log Out-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/LogOut.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#logout_d" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Log Out">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+
+
+                        <Pane prefHeight="203.0" prefWidth="235.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+        </VBox>
+    </left>
+</BorderPane>

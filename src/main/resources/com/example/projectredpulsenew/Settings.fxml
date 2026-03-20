@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: #F3F4F6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectredpulsenew.Settings_Controller">
+    <!-- ================= SIDEBAR (UNCHANGED) ================= -->
+    <left>
+        <VBox fx:id="sidebar" prefHeight="724.0" prefWidth="260.0" spacing="12" styleClass="sidebar" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="sidebarHeader" alignment="CENTER" styleClass="sidebar-header">
+                    <children>
+                        <Label fx:id="appNameLabel" prefHeight="35.0" prefWidth="164.0" styleClass="welcome-text" stylesheets="@styles.css" text="RedPulse" textFill="RED">
+                            <font>
+                                <Font name="Berlin Sans FB Demi Bold" size="39.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Separator />
+                <VBox fx:id="sidebarButtons" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="235.0" spacing="15.0">
+                    <children>
+
+<!--                        DashBoard-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="212.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/house.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnHome" mnemonicParsing="false" onAction="#StngtoHome" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Home">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Newsfeed-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="212.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/newspaper-folded.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnNewsFeed" mnemonicParsing="false" onAction="#StngtoNews" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Newsfeed">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Create Post-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="255.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-create-post-48.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnCreatePost" mnemonicParsing="false" onAction="#StngtoCreate" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Creat Post">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Notification-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="298.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/bell.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnNotifications" mnemonicParsing="false" onAction="#StngtoNoti" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Notification">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Chat-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-chat-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnChat" mnemonicParsing="false" onAction="#Stngtochat" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Chat">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Profile-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-profile-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnProfile" mnemonicParsing="false" onAction="#StngtoProf" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Profile">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Settings-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/icons8-setting-50.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnSettings" mnemonicParsing="false" prefHeight="33.0" prefWidth="134.0" stylesheets="@styles.css" text="Setting">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                            <styleClass>
+                                                <String fx:value="sidebar-button" />
+                                                <String fx:value="clicked-button" />
+                                            </styleClass>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="clicked-button" />
+                                        <String fx:value="sidebar-button-hbox" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+<!--                        Logout-->
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="428.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="230.0" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="186.0" spacing="5.0" stylesheets="@styles.css">
+                                    <children>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@img/LogOut.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#logout_stng" prefHeight="33.0" prefWidth="134.0" styleClass="sidebar-button" stylesheets="@styles.css" text="Log Out">
+                                            <font>
+                                                <Font name="Bell MT Bold" size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="sidebar-button-hbox" />
+                                        <String fx:value="sidebar-button-hbox-h" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </HBox>
+
+                        <Pane prefHeight="203.0" prefWidth="235.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+        </VBox>
+    </left>
+
+    <!-- ================= TOP BAR (UNCHANGED) ================= -->
+    <top>
+        <HBox fx:id="topBar" prefHeight="51.0" prefWidth="1366.0" spacing="12" styleClass="topbar" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+            <children>
+                <Pane prefHeight="27.0" prefWidth="1194.0" HBox.hgrow="ALWAYS" />
+<!--                <HBox fx:id="topBarRight" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="64.0" spacing="5.0">-->
+<!--                    <children>-->
+<!--                        <Button fx:id="btnLogOut" onAction="#logout_stng" stylesheets="@styles.css" text="Log Out" textFill="WHITE">-->
+<!--                            <styleClass>-->
+<!--                                <String fx:value="login-button" />-->
+<!--                                <String fx:value="login-button" />-->
+<!--                            </styleClass>-->
+<!--                        </Button>-->
+<!--                    </children>-->
+<!--                </HBox>-->
+            </children>
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+        </HBox>
+    </top>
+
+    <!-- ================= CENTER: SETTINGS PAGE ================= -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="settings-scroll-pane" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+            <content>
+                <VBox alignment="TOP_CENTER" spacing="20.0">
+                    <padding>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                    </padding>
+                    <children>
+
+                        <!-- Header Area -->
+                        <HBox alignment="CENTER_LEFT" maxWidth="800.0" spacing="20.0">
+                            <children>
+                                <Label styleClass="settings-header" text="Settings" />
+                                <Pane HBox.hgrow="ALWAYS" />
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </HBox>
+
+                        <!-- Settings List Card -->
+                        <VBox maxWidth="800.0" styleClass="settings-card" stylesheets="@styles.css">
+                            <children>
+
+                                <!-- Item 1: Edit Profile -->
+                                <Button fx:id="btnProfEdit" onAction="#gotoEdit" maxWidth="1.7976931348623157E308" styleClass="settings-row-btn">
+                                    <graphic>
+                                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                            <children>
+                                                <StackPane styleClass="settings-icon-bg">
+                                                    <children>
+                                                        <SVGPath content="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#555555" />
+                                                    </children>
+                                                </StackPane>
+                                                <VBox alignment="CENTER_LEFT">
+                                                    <children>
+                                                        <Label styleClass="settings-item-title" text="Edit Profile" />
+                                                        <Label styleClass="settings-item-sub" text="Update your personal details" />
+                                                    </children>
+                                                </VBox>
+                                                <Pane HBox.hgrow="ALWAYS" />
+                                                <SVGPath content="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#9CA3AF" />
+                                            </children>
+                                        </HBox>
+                                    </graphic>
+                                </Button>
+                                <Separator />
+
+                                <!-- Item 1: Profile Picture -->
+                                <Button fx:id="btnProfPic" onAction="#gotoProfPic" maxWidth="1.7976931348623157E308" styleClass="settings-row-btn">
+                                    <graphic>
+                                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                            <children>
+                                                <StackPane styleClass="settings-icon-bg">
+                                                    <children>
+                                                        <SVGPath content="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#555555" />
+                                                    </children>
+                                                </StackPane>
+                                                <VBox alignment="CENTER_LEFT">
+                                                    <children>
+                                                        <Label styleClass="settings-item-title" text="Profile Picture" />
+                                                        <Label styleClass="settings-item-sub" text="Update your profile picture" />
+                                                    </children>
+                                                </VBox>
+                                                <Pane HBox.hgrow="ALWAYS" />
+                                                <SVGPath content="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#9CA3AF" />
+                                            </children>
+                                        </HBox>
+                                    </graphic>
+                                </Button>
+                                <Separator />
+
+                                <!-- Item 2: Change Password -->
+                                <Button fx:id="btnChangePass" onAction="#gotoChangePass" maxWidth="1.7976931348623157E308" styleClass="settings-row-btn">
+                                    <graphic>
+                                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                            <children>
+                                                <StackPane styleClass="settings-icon-bg">
+                                                    <children>
+                                                        <SVGPath content="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" fill="#555555" scaleX="0.9" scaleY="0.9" />
+                                                    </children>
+                                                </StackPane>
+                                                <VBox alignment="CENTER_LEFT">
+                                                    <children>
+                                                        <Label styleClass="settings-item-title" text="Change Password" />
+                                                        <Label styleClass="settings-item-sub" text="Keep your account secure" />
+                                                    </children>
+                                                </VBox>
+                                                <Pane HBox.hgrow="ALWAYS" />
+                                                <SVGPath content="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#9CA3AF" />
+                                            </children>
+                                        </HBox>
+                                    </graphic>
+                                </Button>
+                                <Separator />
+
+                                <!-- Item 3: Medical Certificate -->
+                                <Button fx:id="btnDocEdit" onAction="#gotoDocEdit" maxWidth="1.7976931348623157E308" styleClass="settings-row-btn">
+                                    <graphic>
+                                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                            <children>
+                                                <StackPane styleClass="settings-icon-bg">
+                                                    <children>
+                                                        <SVGPath content="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z" fill="#555555" scaleX="0.9" scaleY="0.9" />
+                                                    </children>
+                                                </StackPane>
+                                                <VBox alignment="CENTER_LEFT">
+                                                    <children>
+                                                        <Label styleClass="settings-item-title" text="Medical Certificate/NID" />
+                                                        <Label styleClass="settings-item-sub" text="Update your health and identity document" />
+                                                    </children>
+                                                </VBox>
+                                                <Pane HBox.hgrow="ALWAYS" />
+                                                <SVGPath content="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#9CA3AF" />
+                                            </children>
+                                        </HBox>
+                                    </graphic>
+                                </Button>
+                                <Separator />
+
+                                <!-- Item 4: Admin Pannel -->
+                                <Button fx:id="btnAdminPannel" onAction="#gotoAdminPanel" maxWidth="1.7976931348623157E308" styleClass="settings-row-btn">
+                                    <graphic>
+                                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                            <children>
+                                                <StackPane styleClass="settings-icon-bg">
+                                                    <children>
+                                                        <SVGPath content="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z" fill="#555555" scaleX="0.9" scaleY="0.9" />
+                                                    </children>
+                                                </StackPane>
+                                                <VBox alignment="CENTER_LEFT">
+                                                    <children>
+                                                        <Label styleClass="settings-item-title" text="Admin Pannel" />
+                                                        <Label styleClass="settings-item-sub" text="Go inside to manage the App" />
+                                                    </children>
+                                                </VBox>
+                                                <Pane HBox.hgrow="ALWAYS" />
+                                                <SVGPath content="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#9CA3AF" />
+                                            </children>
+                                        </HBox>
+                                    </graphic>
+                                </Button>
+                                <Separator />
+
+                                <!-- Item 4: Delete Account -->
+                                <Button fx:id="btnDeleteAccount" onAction="#deleteAccount" maxWidth="1.7976931348623157E308" styleClass="settings-row-btn">
+                                    <graphic>
+                                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                            <children>
+                                                <StackPane styleClass="settings-icon-bg">
+                                                    <children>
+                                                        <SVGPath content="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z" fill="#555555" scaleX="0.9" scaleY="0.9" />
+                                                    </children>
+                                                </StackPane>
+                                                <VBox alignment="CENTER_LEFT">
+                                                    <children>
+                                                        <Label styleClass="settings-item-title" text="Delete Account" />
+                                                        <Label styleClass="settings-item-sub" text="Delete your account, if you want!" />
+                                                    </children>
+                                                </VBox>
+                                                <Pane HBox.hgrow="ALWAYS" />
+                                                <SVGPath content="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#9CA3AF" />
+                                            </children>
+                                        </HBox>
+                                    </graphic>
+                                </Button>
+
+
+                            </children>
+                        </VBox>
+
+                        <!-- Logout Button Area -->
+                        <HBox alignment="CENTER" maxWidth="800.0">
+                            <children>
+                                <Button fx:id="btnLogOutPage" onAction="#logout_stng_page" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="settings-logout-btn" text="Logout" HBox.hgrow="ALWAYS">
+                                    <graphic>
+                                        <SVGPath content="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" fill="#D32F2F" />
+                                    </graphic>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </HBox>
+
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
