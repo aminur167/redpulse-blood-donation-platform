@@ -58,4 +58,6 @@ src/
      └── resources/
          └── com/example/projectredpulsenew/
 
-
+## Run the Project
+```bash
+mvn javafx:run
